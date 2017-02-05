@@ -1,0 +1,15 @@
+// breakpoints
+$desktop-width: 900px;
+
+// colors
+$structure: #37474f;
+
+$lightest: lighten( $structure, 71% );
+$lighter:  lighten( $structure, 65% );
+$light:    lighten( $structure, 55% );
+$medium:   lighten( $structure, 25% );
+$dark: $structure;
+
+$yellow: #b4b11e;
+$blue:   #00838f;
+$green:  #43a047;

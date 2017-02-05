@@ -1,0 +1,106 @@
+/*----------------------------------------------------------------------------------------*/
+/*                    __                       ___                                        */
+/*                   |_  |  _  \/ |_   _  \/    |  _   _  | |_   _  \/                    */
+/*                   |   | |/_ /\ |_/ |_| /\    | |_| |_| | |_/ |_| /\                    */
+/*                                                                                        */
+/*----------------------------------------------------------------------------------------*/
+/*                                    PARENT STYLES                                       */
+/*----------------------------------------------------------------------------------------*/
+/*  Full Selector                 | Short Selector  | Rule                                */
+/*----------------------------------------------------------------------------------------*/
+/*   display:                                                                             */
+    .flex                                             { display: flex; }
+    .flex.flex-inline,              .flex.f-if        { display: inline-flex; }
+
+/*   flex-direction:                                                                      */
+    .flex.direction-row,            .flex.f-d-r       { flex-direction: row; }
+    .flex.direction-row-reverse,    .flex.f-d-rr      { flex-direction: row-reverse; }
+    .flex.direction-column,         .flex.f-d-c       { flex-direction: column; }
+    .flex.direction-column-reverse, .flex.f-d-cr      { flex-direction: column-reverse; }
+
+/*   flex-wrap:                                                                           */
+    .flex.no-wrap,                  .flex.f-w-nw      { flex-wrap: nowrap; }
+    .flex.wrap,                     .flex.f-w-w       { flex-wrap: wrap; }
+    .flex.wrap-reverse,             .flex.f-w-wr      { flex-wrap: wrap-reverse; }
+
+/*   justify-content:                                                                     */
+    .flex.justify-start,            .flex.f-j-fs      { justify-content: flex-start; }
+    .flex.justify-end,              .flex.f-j-fe      { justify-content: flex-end; }
+    .flex.justify-center,           .flex.f-j-c       { justify-content: center; }
+    .flex.justify-between,          .flex.f-j-sb      { justify-content: space-between; }
+    .flex.justify-around,           .flex.f-j-sa      { justify-content: space-around; }
+
+/*   align-items:                                                                         */
+    .flex.items-start,              .flex.f-i-fs      { align-items: flex-start; }
+    .flex.items-end,                .flex.f-i-fe      { align-items: flex-end; }
+    .flex.items-center,             .flex.f-i-c       { align-items: center; }
+    .flex.items-baseline,           .flex.f-i-bl      { align-items: baseline; }
+    .flex.items-stretch,            .flex.f-i-s       { align-items: stretch; }
+
+/*   align-content:                                                                       */
+    .flex.content-start,            .flex.f-c-fs      { align-content: flex-start; }
+    .flex.content-end,              .flex.f-c-fe      { align-content: flex-end; }
+    .flex.content-center,           .flex.f-c-c       { align-content: center; }
+    .flex.content-baseline,         .flex.f-c-s       { align-content: baseline; }
+    .flex.content-stretch,          .flex.f-c-s       { align-content: stretch; }
+
+/*   layout:                                                                       */
+    .flex.layout-even > *,          .flex.f-l-e > *   { flex-basis: 100%; flex-shrink: 1 }
+
+/*----------------------------------------------------------------------------------------*/
+/*                                    CHILD STYLES                                        */
+/*----------------------------------------------------------------------------------------*/
+/* Full Selector                   | Short Selector | Rule                                */
+/*----------------------------------------------------------------------------------------*/
+/*   flex-order:                                                                          */
+    .flex .order-0,                  .flex .f-o-0     { order: 0; }
+    .flex .order-1,                  .flex .f-o-1     { order: 1; }
+    .flex .order-2,                  .flex .f-o-2     { order: 2; }
+    .flex .order-3,                  .flex .f-o-3     { order: 3; }
+    .flex .order-4,                  .flex .f-o-4     { order: 4; }
+    .flex .order-5,                  .flex .f-o-5     { order: 5; }
+    .flex .order-6,                  .flex .f-o-6     { order: 6; }
+    .flex .order-7,                  .flex .f-o-7     { order: 7; }
+    .flex .order-8,                  .flex .f-o-8     { order: 8; }
+    .flex .order-9,                  .flex .f-o-9     { order: 9; }
+
+
+/*----------------------------------------------------------------------------------------*/
+/* Individual Selector            | Short Group Selector | Rule                           */
+/*----------------------------------------------------------------------------------------*/
+/*   flex-grow:                                                                           */
+    .flex .grow-0,                  .flex.f-g-0 > *        { flex-grow: 0; }
+    .flex .grow-1,                  .flex.f-g-1 > *        { flex-grow: 1; }
+    .flex .grow-2,                  .flex.f-g-2 > *        { flex-grow: 2; }
+    .flex .grow-3,                  .flex.f-g-3 > *        { flex-grow: 3; }
+    .flex .grow-4,                  .flex.f-g-4 > *        { flex-grow: 4; }
+    .flex .grow-5,                  .flex.f-g-5 > *        { flex-grow: 5; }
+    .flex .grow-6,                  .flex.f-g-6 > *        { flex-grow: 6; }
+    .flex .grow-7,                  .flex.f-g-7 > *        { flex-grow: 7; }
+    .flex .grow-8,                  .flex.f-g-8 > *        { flex-grow: 8; }
+    .flex .grow-9,                  .flex.f-g-9 > *        { flex-grow: 9; }
+
+/*   flex-shrink:                                                                         */
+    .flex .shrink-0,                .flex.f-s-0 > *        { flex-shrink: 0; }
+    .flex .shrink-1,                .flex.f-s-1 > *        { flex-shrink: 1; }
+    .flex .shrink-2,                .flex.f-s-2 > *        { flex-shrink: 2; }
+    .flex .shrink-3,                .flex.f-s-3 > *        { flex-shrink: 3; }
+    .flex .shrink-4,                .flex.f-s-4 > *        { flex-shrink: 4; }
+    .flex .shrink-5,                .flex.f-s-5 > *        { flex-shrink: 5; }
+    .flex .shrink-6,                .flex.f-s-6 > *        { flex-shrink: 6; }
+    .flex .shrink-7,                .flex.f-s-7 > *        { flex-shrink: 7; }
+    .flex .shrink-8,                .flex.f-s-8 > *        { flex-shrink: 8; }
+    .flex .shrink-9,                .flex.f-s-9 > *        { flex-shrink: 9; }
+
+/*   align-self:                                                                          */
+    .flex .align-auto,              .flex.f-a-a > *        { align-self: auto; }
+    .flex .align-start,             .flex.f-a-s > *        { align-self: start; }
+    .flex .align-end,               .flex.f-a-e > *        { align-self: end; }
+    .flex .align-center,            .flex.f-a-c > *        { align-self: center; }
+    .flex .align-baseline,          .flex.f-a-bl > *       { align-self: baseline; }
+    .flex .align-stretch,           .flex.f-a-s > *        { align-self: stretch; }
+
+
+/*----------------------------------------------------------------------------------------*/
+/*  Nolan Neustaeter                    2016                   https://github.com/noolan  */
+/*----------------------------------------------------------------------------------------*/

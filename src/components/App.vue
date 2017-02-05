@@ -1,0 +1,187 @@
+<template>
+  <main id="app" class="flex f-d-c f-i-c">
+    <section id="heading">
+      <div class="container flex columns f-i-c">
+        <h1>Nolan Neustaeter <small>Full-Stack Web Developer</small></h1>
+
+        <section id="nouns" class="flex f-w-w f-j-c f-i-fs">
+          <span>Code Typer</span>
+          <span>CSS Wrangler</span>
+          <span>Data Organizer</span>
+          <span>Responsiviser</span>
+          <span>API Enthusiast</span>
+          <span>Beard Owner</span>
+        </section>
+      </div>
+
+    </section>
+
+    <section id="introduction">
+      <div class="container">
+        <p class="lead">
+          Hello, my name is Nolan and I make things. Mostly I make things for web browsers but I also make:
+        </p>
+        <ul>
+          <li>overcomplicated woodworking projects</li>
+          <li>really cute kids (four so far!)</li>
+          <li>a fantastic butternut squash soup</li>
+          <li>lame &ldquo;dad&rdquo; jokes</li>
+        </ul>
+
+        <p>
+          I first started making websites for family and friends 17 years ago. Since then, I've worked with other platforms and languages but I'm always drawn back, eventually.
+          <br />
+          Some people complain about how fast the industry changes but that's always been one of my favorite aspects of web development. There's always a new or interesting language, library, or platform to learn so boredom is hard to come by.
+        </p>
+        <p>
+          Lately, I've been focussing more on front-end development so I've been able to learn some amazing libraries like React and Vue.js as well as some of the newer tooling projects like Webpack.
+        </p>
+        <p>
+          I currently use a Macbook Pro for development with as many monitors attached as I can manage.<br />
+          My primary editor for the last year has been Atom but I keep Sublime Text around for really big files and I use VIM when I'm working in a terminal.<br />
+          In Atom I'm using Atom Material for the UI theme, Firewatch for syntax and Fira Code for my font. (LIGATURES!!!).
+        </p>
+
+      </div>
+    </section>
+
+    <knowledge :expertise="knowledge"></knowledge>
+
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="heading">Recent Projects</h2>
+
+        <div id="listing" class="project sub-section">
+          <p class="lead">
+            In 2015 I rebuilt my companies product listing component using React.
+          </p>
+          <div class="columns items-centered">
+            <div>
+              <p>
+                It features a prominent search bar, optional filters, and automatic pagination when the user scrolls near the bottom of the page.<br />
+                The product data is stored locally as an array of JavaScript objects so the searching, sorting, and filtering is nearly instant. The design features a generous amount of whitespace and is fully responsive on smaller devices.
+              </p>
+              <p>
+                <a href="http://www.vernontoyota.com/new-toyota-sales-vernon" target="_blank" rel="nofollow">Here is a link</a> to one of the sites that is using the product listing component.
+              </p>
+            </div>
+            <div>
+              <figure>
+                <img src="~assets/products-page.png" class="responsive" alt="Responsive product listing page built with React" />
+                <figcaption>Screenshot of the product listing page built with React</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div id="secret" class="project sub-section">
+          <p class="lead">
+            This last year I have been tasked with building a completely new product for the company which has been awesome.
+          </p>
+          <p>
+            I can't go into much detail since the product hasn't been officially announced but the technology stack I chose was:
+          </p>
+
+          <div class="columns items-centered">
+            <div>
+              <dl style="font-size: .85em;">
+                <dt>Hosting</dt>
+                <dd>Amazon Web Services EC2 - fast and cost efficient</dd>
+
+                <dt>Web Server</dt>
+                <dd>Nginx - fast and very configurable</dd>
+
+                <dt>Backend language</dt>
+                <dd>PHP7 - huge speed improvement over PHP5.x and the other devs are already familiar with PHP from our existing products</dd>
+
+                <dt>Backend framework</dt>
+                <dd>Laravel 5 - I've been using Laravel since version 2 and I love it's attention to code readabillity and having an easy to use API</dd>
+
+                <dt>Frontend framework</dt>
+                <dd>Vue.js - This was a tossup between Vue and React. The main deciding factor was that I would soon be bringing some junior devs on to the project and React has a steep learning curve at the beginning</dd>
+              </dl>
+            </div>
+
+            <div>
+              <gfycat gfy-id="GratefulNarrowBluetickcoonhound" caption="Teaser video of just one part of my current project"></gfycat>
+            </div>
+          </div>
+
+          <p>
+            This type of project is something that I have worked on a few times in the past so I already had some ideas that I wanted to try out in regards to how to configure the web server and the data structure.<br>
+            It's on the home stretch now so as I'm able, I'll add more details about this new product <strong>here</strong>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <timeline :years="timeline.years" :events="timeline.events"></timeline>
+
+    <section id="contact">
+      <div class="container">
+        <div class="sub-section">
+          <p class="lead">
+            If you want to chat about anything (especially the crazy/awesome world of web development)
+          </p>
+          <div class="contact-method">
+            send me an email at <a href="mailto:nolan@neustaeter.ca" target="_blank">nolan@neustaeter.ca</a>
+          </div>
+          <div class="contact-method">
+            call me at <a href="tel:nolan@neustaeter.ca" target="_blank">(778) 765-4327</a> <small>(I know, it was so close to 7654321...)</small>
+          </div>
+        </div>
+        <div class="sub-section">
+          <p class="lead">
+            The source code for this page and a few other experiments can be found here:
+          </p>
+          <div class="contact-method">
+            <a href="https://github.com/noolan" target="_blank">https://github.com/noolan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+</template>
+
+<script>
+import Knowledge from 'components/Knowledge.vue';
+import Gfycat from 'components/Gfycat.vue';
+import Timeline from 'components/Timeline.vue';
+
+import knowledge from 'data/knowledge';
+import timeline from 'data/timeline';
+
+export default {
+  name: 'app',
+  components: {
+    Knowledge,
+    Gfycat,
+    Timeline
+  },
+  data() {
+    return {
+      knowledge: knowledge,
+      timeline: timeline
+    };
+  }
+}
+</script>
+
+<style lang="scss">
+// variables
+@import "../styles/variables.scss";
+
+// super basic reset
+@import "../styles/reset.scss";
+
+// utilities
+@import "../styles/flexbox-toolbox.css";
+
+// main styles
+@import "../styles/app.scss";
+
+</style>
