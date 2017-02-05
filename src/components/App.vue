@@ -129,7 +129,8 @@
             send me an email at <a href="mailto:nolan@neustaeter.ca" target="_blank">nolan@neustaeter.ca</a>
           </div>
           <div class="contact-method">
-            call me at <a href="tel:nolan@neustaeter.ca" target="_blank">(778) 765-4327</a> <small>(I know, it was so close to 7654321...)</small>
+            call me at <a href="tel:nolan@neustaeter.ca" target="_blank">(778) 765-4327</a><br />
+            <small>(I know, it was so close to 7654321...)</small>
           </div>
         </div>
         <div class="sub-section">
