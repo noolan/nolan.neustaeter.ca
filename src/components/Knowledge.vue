@@ -1,7 +1,7 @@
 <template>
   <section id="knowledge">
     <div>
-      <h2 class="heading">Languages and Frameworks and Platforms. Oh my!</h2>
+      <h2 class="heading">Languages and Frameworks and Platforms.<br>Oh my!</h2>
 
       <div class="search">
         <input type="text" v-model="search" :placeholder="placeholder" />

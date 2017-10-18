@@ -238,3 +238,17 @@ body {
     }
   }
 }
+
+@media print {
+  html {
+    font-size: 6px;
+  }
+
+  .search {
+    display: none !important;
+  }
+
+  #projects .container .sub-section {
+    page-break-inside: never;
+  }
+}

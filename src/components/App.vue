@@ -82,15 +82,15 @@
 
         <div id="secret" class="project sub-section">
           <p class="lead">
-            This last year I have been tasked with building a completely new product for the company which has been awesome.
+            This last year I was tasked with building a completely new product for the company which has been awesome.
           </p>
           <p>
-            I can't go into much detail since the product hasn't been officially announced but the technology stack I chose was:
+            I can't go into much detail since the product hasn't been officially released but the technology stack I chose was:
           </p>
 
           <div class="columns items-centered">
             <div>
-              <dl style="font-size: .85em;">
+              <dl style="font-size: .85em; padding-bottom: 1.5rem;">
                 <dt>Hosting</dt>
                 <dd>Amazon Web Services EC2 - fast and cost efficient</dd>
 
@@ -140,7 +140,7 @@
         </div>
         <div class="sub-section">
           <p class="lead">
-            The source code for this page and a few other experiments can be found here:
+            The source code for this page and a few other experiments can be found at:
           </p>
           <div class="contact-method">
             <a href="https://github.com/noolan" target="_blank">https://github.com/noolan</a>
