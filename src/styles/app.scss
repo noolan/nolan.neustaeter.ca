@@ -1,3 +1,7 @@
+html {
+  font-size: 10px;
+}
+
 body {
   font-family: 'Fira Sans Condensed', 'sans-serif';
   -webkit-font-smoothing: antialiased;
@@ -5,15 +9,14 @@ body {
   background-color: #fff;
   color: $dark;
   box-sizing: border-box;
-  font-size: 18px;
-  line-height: 1.6;
+  line-height: 1;
   margin: 0;
 }
 
 
 #app {
   margin: 0;
-
+  font-size: 2rem;
 
   h1, h2 , h3, h4, h5, h6 {
     font-weight: normal;
@@ -38,7 +41,10 @@ body {
     margin-bottom: 0;
   }
 
-  p { margin: 0 0 .5em 0; }
+  p {
+    margin: 0 0 1em 0;
+    line-height: 1.25;
+  }
 
   small { color: $medium; }
 
@@ -47,6 +53,8 @@ body {
 
   figcaption {
     text-align: center;
+    font-size: .85em;
+    padding: .5em;
   }
 
   .heading {
@@ -68,6 +76,7 @@ body {
   .columns {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 
     > * {
       width: 100%;
@@ -81,7 +90,6 @@ body {
   @media (min-width: $desktop-width) {
     .columns {
       flex-wrap: nowrap;
-
       > * {
         flex-shrink: 1;
         padding-left: .6em;
@@ -94,6 +102,10 @@ body {
 
       > *:last-child {
         padding-right: 0;
+      }
+
+      &.columns-wrap {
+        flex-wrap: wrap;
       }
     }
   }
@@ -151,6 +163,11 @@ body {
 
   #heading {
     padding: 2em 0 2.5em;
+
+    h1 {
+      text-align: center;
+      padding-bottom: .6em;
+    }
   }
 
   #introduction {
@@ -191,29 +208,33 @@ body {
 
 
   #contact {
-    text-align: center;
 
-    .contact-method {
-      position: relative;
-      padding-top: 1em;
-      font-size: 1.5em;
+
+    .container {
+      text-align: center;
+
+      .contact-method {
+        position: relative;
+        padding-top: 1em;
+        font-size: 1.5em;
+      }
+
+
+      .contact-method + .contact-method::before {
+        position: absolute;
+        top: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        content: "or";
+        font-size: .75em;
+        color: $medium;
+      }
+
+      .contact-method:first-of-type {
+        padding-top: .5em;
+      }
+
     }
-
-
-    .contact-method + .contact-method::before {
-      position: absolute;
-      top: 2px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      content: "or";
-      font-size: .75em;
-      color: $medium;
-    }
-
-    .contact-method:first-of-type {
-      padding-top: .5em;
-    }
-
   }
 }

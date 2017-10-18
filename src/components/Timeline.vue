@@ -1,8 +1,8 @@
 <template>
   <section id="timeline">
     <div class="container">
-      <div v-for="year in all_years">
-        <aside v-if="year !== ''" v-html="year"></aside>
+      <div v-for="point in points">
+        <aside v-if="point !== ''" v-html="point"></aside>
       </div>
     </div>
   </section>
@@ -12,23 +12,19 @@
 export default {
   name: 'timeline',
   props: {
-    years: {
-      type: Number,
-      required: true
-    },
     events: {
       type: Object,
       required: true
     }
   },
   computed: {
-    all_years: function() {
-      let all_years = [];
-      for (let year = this.years; year >= 0; year--) {
-        all_years.push(this.events[year] || '');
+    points () {
+      let lastEventKey = Object.keys(this.events).pop()
+      let points = []
+      for (let point = 0; point <= lastEventKey; point++) {
+        points.push(this.events[point] || '')
       }
-
-      return all_years;
+      return points
     }
   }
 }
@@ -40,7 +36,7 @@ export default {
 #app {
   // general and mobile
   #timeline {
-
+    padding-bottom: 2.5em;
 
     > .container {
       border-bottom: 2px solid $dark;

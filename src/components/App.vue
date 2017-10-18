@@ -1,7 +1,7 @@
 <template>
   <main id="app" class="flex f-d-c f-i-c">
     <section id="heading">
-      <div class="container flex columns f-i-c">
+      <div class="container">
         <h1>Nolan Neustaeter <small>Full-Stack Web Developer</small></h1>
 
         <section id="nouns" class="flex f-w-w f-j-c f-i-fs">
@@ -21,15 +21,18 @@
         <p class="lead">
           Hello, my name is Nolan and I make things. Mostly I make things for web browsers but I also make:
         </p>
-        <ul>
-          <li>overcomplicated woodworking projects</li>
-          <li>really cute kids (four so far!)</li>
-          <li>a fantastic butternut squash soup</li>
-          <li>lame &ldquo;dad&rdquo; jokes</li>
-        </ul>
 
         <p>
-          I first started making websites for family and friends 17 years ago. Since then, I've worked with other platforms and languages but I'm always drawn back, eventually.
+          <ul>
+            <li>overcomplicated woodworking projects</li>
+            <li>really cute kids (four so far!)</li>
+            <li>a fantastic butternut squash soup</li>
+            <li>lame &ldquo;dad&rdquo; jokes</li>
+          </ul>
+        </p>
+
+        <p>
+          I first started making websites for family and friends 18 years ago. Since then, I've worked with other platforms and languages but I'm always drawn back, eventually.
           <br />
           Some people complain about how fast the industry changes but that's always been one of my favorite aspects of web development. There's always a new or interesting language, library, or platform to learn so boredom is hard to come by.
         </p>
@@ -59,7 +62,9 @@
           <div class="columns items-centered">
             <div>
               <p>
-                It features a prominent search bar, optional filters, and automatic pagination when the user scrolls near the bottom of the page.<br />
+                It features a prominent search bar, optional filters, and automatic pagination when the user scrolls near the bottom of the page.
+              </p>
+              <p>
                 The product data is stored locally as an array of JavaScript objects so the searching, sorting, and filtering is nearly instant. The design features a generous amount of whitespace and is fully responsive on smaller devices.
               </p>
               <p>
@@ -117,7 +122,7 @@
       </div>
     </section>
 
-    <timeline :years="timeline.years" :events="timeline.events"></timeline>
+    <timeline :events="events"></timeline>
 
     <section id="contact">
       <div class="container">
@@ -149,12 +154,12 @@
 </template>
 
 <script>
-import Knowledge from 'components/Knowledge.vue';
-import Gfycat from 'components/Gfycat.vue';
-import Timeline from 'components/Timeline.vue';
+import Knowledge from 'components/Knowledge.vue'
+import Gfycat from 'components/Gfycat.vue'
+import Timeline from 'components/Timeline.vue'
 
-import knowledge from 'data/knowledge';
-import timeline from 'data/timeline';
+import knowledge from 'data/knowledge'
+import timelineEvents from 'data/events'
 
 export default {
   name: 'app',
@@ -166,8 +171,8 @@ export default {
   data() {
     return {
       knowledge: knowledge,
-      timeline: timeline
-    };
+      events: timelineEvents
+    }
   }
 }
 </script>

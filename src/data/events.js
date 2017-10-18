@@ -1,0 +1,21 @@
+export default {
+   0: 'first computer',
+   3: 'learned QBasic',
+   6: 'first programming class',
+   9: 'first website for a business',
+  10: 'graduated highschool',
+  11: 'college',
+  12: 'learned ',
+  14: 'married!',
+  15: 'technical support',
+  16: 'children = 1',
+  17: 'university',
+  18: 'children++',
+  19: 'IT Consultant',
+  20: 'children++',
+  21: 'senior developer (current)',
+  22: 'children++',
+  23: '<a href="#listing">product listing</a>',
+  24: '<a href="#secret">secret project</a>',
+  26: 'NOW()'
+}

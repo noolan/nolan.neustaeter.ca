@@ -11,7 +11,7 @@
         <div class="container">
         <h3>{{ area.title }}</h3>
 
-          <div class="columns">
+          <div class="columns columns-wrap">
             <div v-for="category of area.categories" class="category">
               <h4>{{ category.title }}</h4>
               <ul>
@@ -122,8 +122,8 @@ export default {
       }
 
       .category {
-        padding-top: .5em;
-        padding-bottom: .5em;
+        padding: 1.5rem .5rem;
+        max-width: 25rem;
 
         h4 {
           border-bottom: 1px solid $lighter;
@@ -134,16 +134,14 @@ export default {
 
 
         ul {
-          display: flex;
-          flex-wrap: wrap;
+          columns: 10rem auto;
           list-style-type: none;
           padding-left: 0;
 
           li {
-            display: inline-block;
-            padding: .1em .25em;
+            display: block;
+            padding: .25em .25em;
             line-height: 1.15;
-            width: calc(50% - .5em);
           }
         }
       }
