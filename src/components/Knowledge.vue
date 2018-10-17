@@ -4,7 +4,7 @@
       <h2 class="heading">Languages and Frameworks and Platforms.<br>Oh my!</h2>
 
       <div class="search">
-        <input type="text" v-model="search" :placeholder="placeholder" />
+        <label for="knowledge_search">Search</label><input id="knowledge_search" aria-label="Search" type="text" v-model="search" :placeholder="placeholder" />
       </div>
 
       <div v-for="(area, areaIndex) of filteredExpertise" :key="areaIndex" class="area">
@@ -110,6 +110,9 @@ export default {
 
     .search {
       padding-bottom: 2em;
+      label {
+        display: none;
+      }
     }
 
     .area {

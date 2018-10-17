@@ -50,7 +50,7 @@ body {
 
   small { color: $medium; }
 
-  a       { color: $green; }
+  a       { color: darken($green, 10%); }
   a:hover { color: $blue; }
 
   figcaption {

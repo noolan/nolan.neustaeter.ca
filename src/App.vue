@@ -64,7 +64,7 @@
                 The product data is stored locally as an array of JavaScript objects so the searching, sorting, and filtering is nearly instant. The design features a generous amount of whitespace and is fully responsive on smaller devices.
               </p>
               <p>
-                <a href="http://www.vernontoyota.com/new-toyota-sales-vernon" target="_blank" rel="nofollow">Here is a link</a> to one of the sites that is using the product listing component.
+                <a href="http://www.vernontoyota.com/new-toyota-sales-vernon" target="_blank" rel="noopener">Here is a link</a> to one of the sites that is using the product listing component.
               </p>
             </div>
             <div>
