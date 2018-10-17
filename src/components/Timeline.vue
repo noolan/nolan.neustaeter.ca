@@ -1,7 +1,7 @@
 <template>
   <section id="timeline">
     <div class="container">
-      <div v-for="point in points">
+      <div v-for="(point, index) in points" :key="index">
         <aside v-if="point !== ''" v-html="point"></aside>
       </div>
     </div>
@@ -84,7 +84,6 @@ export default {
       }
     }
   }
-
 
   // desktop only
   @media (min-width: $desktop-width) {

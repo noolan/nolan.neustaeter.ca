@@ -1,8 +1,8 @@
 export default {
-   0: 'first computer',
-   3: 'learned QBasic',
-   6: 'first programming class',
-   9: 'first website for a business',
+  0: 'first computer',
+  3: 'learned QBasic',
+  6: 'first programming class',
+  9: 'first website for a business',
   10: 'graduated highschool',
   11: 'college',
   12: 'learned ',

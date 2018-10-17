@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { gfyObject } from 'gfycat-js-embed';
+import { gfyObject } from 'gfycat-js-embed'
 
 export default {
   name: 'gfycat',
@@ -51,7 +51,7 @@ export default {
     },
     playbackSpeed: {
       validator: function (value) {
-        return value >= 0.125 && value <= 8;
+        return value >= 0.125 && value <= 8
       },
       required: false,
       default: 1
@@ -62,22 +62,25 @@ export default {
       default: ''
     }
   },
-  mounted: function() {
-    let el = this.$refs.item;
-    this.$item = gfyObject(el, 'gfyitem');
-
-    this.$item.init({
-      id : this.gfyId,
-      controls : this.controls,
-      title : this.title,
-      autoplay : this.autoplay,
-      responsive : this.responsive,
-      maxHeight : this.maxHeight,
-      optimize : false, // does not start playing with this enabled
-      gif : this.gif,
-      hd : this.hd,
-      playbackSpeed : this.playbackSpeed
-    });
+  mounted: function () {
+    let el = this.$refs.item
+    this.$item = gfyObject(el, 'gfyitem')
+    try {
+      this.$item.init({
+        id: this.gfyId,
+        controls: this.controls,
+        title: this.title,
+        autoplay: this.autoplay,
+        responsive: this.responsive,
+        maxHeight: this.maxHeight,
+        optimize: false, // does not start playing with this enabled
+        gif: this.gif,
+        hd: this.hd,
+        playbackSpeed: this.playbackSpeed
+      })
+    } catch (e) {
+      console.error(e)
+    }
   }
 }
 </script>

@@ -10,7 +10,6 @@
           <span>Data Organizer</span>
           <span>Responsiviser</span>
           <span>API Enthusiast</span>
-          <span>Beard Owner</span>
         </section>
       </div>
 
@@ -25,24 +24,22 @@
         <p>
           <ul>
             <li>overcomplicated woodworking projects</li>
-            <li>really cute kids (four so far!)</li>
             <li>a fantastic butternut squash soup</li>
             <li>lame &ldquo;dad&rdquo; jokes</li>
           </ul>
         </p>
 
         <p>
-          I first started making websites for family and friends 18 years ago. Since then, I've worked with other platforms and languages but I'm always drawn back, eventually.
-          <br />
-          Some people complain about how fast the industry changes but that's always been one of my favorite aspects of web development. There's always a new or interesting language, library, or platform to learn so boredom is hard to come by.
+          I first started making websites for family and friends {{ new Date().getFullYear() - 1999 }} years ago. Since then, I&rsquo;ve worked with other platforms and languages but I&rsquo;m always drawn back, eventually.
+          <br>
+          Some people complain about how fast the industry changes but that&rsquo;s always been one of my favorite aspects of web development. There&rsquo;s always a new or interesting language, library, or platform to learn so boredom is hard to come by.
         </p>
         <p>
-          Lately, I've been focussing more on front-end development so I've been able to learn some amazing libraries like React and Vue.js as well as some of the newer tooling projects like Webpack.
+          Lately, I&rsquo;ve been focussing more on front-end development so I&rsquo;ve been able to learn some amazing libraries like React and Vue.js as well as some of the newer tooling projects like Webpack.
         </p>
         <p>
-          I currently use a Macbook Pro for development with as many monitors attached as I can manage.<br />
-          My primary editor for the last year has been Atom but I keep Sublime Text around for really big files and I use VIM when I'm working in a terminal.<br />
-          In Atom I'm using Atom Material for the UI theme, Firewatch for syntax and Fira Code for my font. (LIGATURES!!!).
+          I currently use a Macbook Pro for development with as many monitors attached as I can manage.<br>
+          I use Sublime Text 3 for my editor with Firewatch as my syntax theme and Fira Code for my font.
         </p>
 
       </div>
@@ -50,14 +47,13 @@
 
     <knowledge :expertise="knowledge"></knowledge>
 
-
     <section id="projects">
       <div class="container">
         <h2 class="heading">Recent Projects</h2>
 
         <div id="listing" class="project sub-section">
           <p class="lead">
-            In 2015 I rebuilt my companies product listing component using React.
+            In 2015 I rebuilt my employer&rsquo;s product listing component using React.
           </p>
           <div class="columns items-centered">
             <div>
@@ -73,7 +69,7 @@
             </div>
             <div>
               <figure>
-                <img src="~assets/products-page.png" class="responsive" alt="Responsive product listing page built with React" />
+                <img src="./assets/products-page.png" class="responsive" alt="Responsive product listing page built with React" />
                 <figcaption>Screenshot of the product listing page built with React</figcaption>
               </figure>
             </div>
@@ -85,7 +81,7 @@
             This last year I was tasked with building a completely new product for the company which has been awesome.
           </p>
           <p>
-            I can't go into much detail since the product hasn't been officially released but the technology stack I chose was:
+            I can&rsquo;t go into much detail since the product hasn&rsquo;t been officially released but the technology stack I chose was:
           </p>
 
           <div class="columns items-centered">
@@ -101,7 +97,7 @@
                 <dd>PHP7 - huge speed improvement over PHP5.x and the other devs are already familiar with PHP from our existing products</dd>
 
                 <dt>Backend framework</dt>
-                <dd>Laravel 5 - I've been using Laravel since version 2 and I love it's attention to code readabillity and having an easy to use API</dd>
+                <dd>Laravel 5 - I&rsquo;ve been using Laravel since version 2 and I love it&rsquo;s attention to code readabillity and having an easy to use API</dd>
 
                 <dt>Frontend framework</dt>
                 <dd>Vue.js - This was a tossup between Vue and React. The main deciding factor was that I would soon be bringing some junior devs on to the project and React has a steep learning curve at the beginning</dd>
@@ -109,13 +105,13 @@
             </div>
 
             <div>
-              <gfycat gfy-id="GratefulNarrowBluetickcoonhound" caption="Teaser video of just one part of my current project"></gfycat>
+              <gfycat gfy-id="GratefulNarrowBluetickcoonhound" caption="Teaser video of just one part of my previous project"></gfycat>
             </div>
           </div>
 
           <p>
             This type of project is something that I have worked on a few times in the past so I already had some ideas that I wanted to try out in regards to how to configure the web server and the data structure.<br>
-            It's on the home stretch now so as I'm able, I'll add more details about this new product <strong>here</strong>.
+            It&rsquo;s on the home stretch now so as I&rsquo;m able, I&rsquo;ll add more details about this new product <strong>here</strong>.
           </p>
         </div>
 
@@ -128,14 +124,13 @@
       <div class="container">
         <div class="sub-section">
           <p class="lead">
-            If you want to chat about anything (especially the crazy/awesome world of web development)
+            If you want to chat about anything...
           </p>
           <div class="contact-method">
-            send me an email at <a href="mailto:nolan@neustaeter.ca" target="_blank">nolan@neustaeter.ca</a>
+            send me an email at <a :href="emailHref" target="_blank">{{ email }}</a>
           </div>
           <div class="contact-method">
-            call me at <a href="tel:nolan@neustaeter.ca" target="_blank">(778) 765-4327</a><br />
-            <small>(I know, it was so close to 7654321...)</small>
+            call me at <a :href="phoneHref" target="_blank">{{ phone }}</a>
           </div>
         </div>
         <div class="sub-section">
@@ -149,17 +144,16 @@
       </div>
     </section>
 
-
   </main>
 </template>
 
 <script>
-import Knowledge from 'components/Knowledge.vue'
-import Gfycat from 'components/Gfycat.vue'
-import Timeline from 'components/Timeline.vue'
+import Knowledge from './components/Knowledge.vue'
+import Gfycat from './components/Gfycat.vue'
+import Timeline from './components/Timeline.vue'
 
-import knowledge from 'data/knowledge'
-import timelineEvents from 'data/events'
+import knowledge from './data/knowledge'
+import timelineEvents from './data/events'
 
 export default {
   name: 'app',
@@ -168,10 +162,20 @@ export default {
     Gfycat,
     Timeline
   },
-  data() {
+  data () {
     return {
+      email: 'nolan@neustaeter.ca',
+      events: timelineEvents,
       knowledge: knowledge,
-      events: timelineEvents
+      phone: '(250) 804-8589'
+    }
+  },
+  computed: {
+    emailHref () {
+      return `mailto:${this.email}`
+    },
+    phoneHref () {
+      return `tel:+1${this.phone.replace(/[()\-\s]/g, '')}`
     }
   }
 }
@@ -179,15 +183,15 @@ export default {
 
 <style lang="scss">
 // variables
-@import "../styles/variables.scss";
+@import "./styles/variables.scss";
 
 // super basic reset
-@import "../styles/reset.scss";
+@import "./styles/reset.scss";
 
 // utilities
-@import "../styles/flexbox-toolbox.css";
+@import "./styles/flexbox-toolbox.css";
 
 // main styles
-@import "../styles/app.scss";
+@import "./styles/app.scss";
 
 </style>

@@ -46,6 +46,8 @@ body {
     line-height: 1.25;
   }
 
+  del { color: $medium; }
+
   small { color: $medium; }
 
   a       { color: $green; }
@@ -249,6 +251,6 @@ body {
   }
 
   #projects .container .sub-section {
-    page-break-inside: never;
+    page-break-inside: avoid;
   }
 }

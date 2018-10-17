@@ -7,15 +7,15 @@
         <input type="text" v-model="search" :placeholder="placeholder" />
       </div>
 
-      <div v-for="area of filtered_expertise" class="area">
+      <div v-for="(area, areaIndex) of filteredExpertise" :key="areaIndex" class="area">
         <div class="container">
         <h3>{{ area.title }}</h3>
 
           <div class="columns columns-wrap">
-            <div v-for="category of area.categories" class="category">
+            <div v-for="(category, categoryIndex) of area.categories" :key="categoryIndex" class="category">
               <h4>{{ category.title }}</h4>
               <ul>
-                <li v-for="item of category.items">
+                <li v-for="(item, itemIndex) of category.items" :key="itemIndex">
                   <span class="item">{{ item }}</span>
                 </li>
               </ul>
@@ -24,8 +24,8 @@
         </div>
       </div>
 
-      <h3 v-if="filtered_expertise.length === 0" class="no-results">
-        Sorry, there are no results for your search term{{ search_terms.length > 0 ? 's' : '' }}
+      <h3 v-if="filteredExpertise.length === 0" class="no-results">
+        Sorry, there are no results for your search term{{ searchTerms.length > 0 ? 's' : '' }}
       </h3>
 
     </div>
@@ -46,57 +46,55 @@ export default {
       default: 'Search for specific skills...'
     }
   },
-  data() {
+  data () {
     return {
       search: ''
-    };
+    }
   },
 
   computed: {
-    search_terms: function() {
+    searchTerms () {
       if (this.search === '') {
-        return [];
+        return []
       } else {
         return this.search.trim().toLowerCase().split(' ')
       }
     },
-    filtered_expertise: function() {
-      let expertise = [];
+    filteredExpertise () {
+      let expertise = []
 
       if (this.search === '') {
-        expertise = this.expertise;
+        expertise = this.expertise
       } else {
-
         for (let area of this.expertise) {
-          let matching_categories = [];
+          let matchingCategories = []
 
           for (let category of area.categories) {
+            let matchingItems = category.items.filter(function (item) {
+              let lowerCaseItem = item.toLowerCase()
+              return this.searchTerms.some(function (term) {
+                return lowerCaseItem.includes(term)
+              })
+            }.bind(this))
 
-            let matching_items = category.items.filter((function(item) {
-              let lower_case_item = item.toLowerCase();
-              return this.search_terms.some(function(term) {
-                return lower_case_item.includes(term);
-              });
-            }).bind(this));
-
-            if (matching_items.length) {
-              matching_categories.push({
+            if (matchingItems.length) {
+              matchingCategories.push({
                 title: category.title,
-                items: matching_items
-              });
+                items: matchingItems
+              })
             }
           } // end categories loop
 
-          if (matching_categories.length) {
+          if (matchingCategories.length) {
             expertise.push({
               title: area.title,
-              categories: matching_categories
+              categories: matchingCategories
             })
           }
         } // end areas loop
       }
 
-      return expertise;
+      return expertise
     }
   }
 }
@@ -131,7 +129,6 @@ export default {
           padding-bottom: .1em;
           margin-bottom: .3em;
         }
-
 
         ul {
           columns: 10rem auto;
