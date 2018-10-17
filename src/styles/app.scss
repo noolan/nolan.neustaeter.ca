@@ -123,10 +123,12 @@ body {
   }
 
   .container {
-    display: inline-block;
+    display: block;
     width: 1200px;
     max-width: calc(100% - 40px);
     text-align: left;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .search {
@@ -211,7 +213,6 @@ body {
 
   #contact {
 
-
     .container {
       text-align: center;
 
@@ -239,6 +240,13 @@ body {
 
     }
   }
+  
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
 }
 
 @media print {
@@ -246,11 +254,20 @@ body {
     font-size: 6px;
   }
 
-  .search {
+  .screen-only,
+  input[type=text] {
     display: none !important;
   }
 
-  #projects .container .sub-section {
+  #timeline {
+    height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #projects .container .sub-section > *,
+  #knowledge .area {
     page-break-inside: avoid;
   }
 }

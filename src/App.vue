@@ -1,5 +1,5 @@
 <template>
-  <main id="app" class="flex f-d-c f-i-c">
+  <main id="app">
     <section id="heading">
       <div class="container">
         <h1>Nolan Neustaeter <small>Full-Stack Web Developer</small></h1>
@@ -71,7 +71,7 @@
               <figure>
                 <picture class="responsive">
                   <source srcset="./assets/products-page.webp" type="image/webp">
-                  <source srcset="./assets/products-page.png" type="image/png"> 
+                  <source srcset="./assets/products-page.png" type="image/png">
                   <img src="./assets/products-page.png" class="responsive" alt="Responsive product listing page built with React">
                 </picture>
                 <figcaption>Screenshot of the product listing page built with React</figcaption>
@@ -139,7 +139,7 @@
         </div>
         <div class="sub-section">
           <p class="lead">
-            The source code for this page and a few other experiments can be found at:
+            The source code for this <span class="screen-only">page</span><span class="print-only">document</span> and a few other experiments can be found at:
           </p>
           <div class="contact-method">
             <a href="https://github.com/noolan" target="_blank" rel="noopener">https://github.com/noolan</a>

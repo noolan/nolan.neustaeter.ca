@@ -1,7 +1,7 @@
 <template>
   <section id="knowledge">
     <div>
-      <h2 class="heading">Languages and Frameworks and Platforms.<br>Oh my!</h2>
+      <h2 class="heading">Languages and Frameworks and Platforms.<br><em>Oh my!</em></h2>
 
       <div class="search">
         <label for="knowledge_search">Search</label><input id="knowledge_search" aria-label="Search" type="text" v-model="search" :placeholder="placeholder" />
@@ -105,7 +105,6 @@ export default {
 
 #app {
   #knowledge {
-
     padding-bottom: 0;
 
     .search {
@@ -164,4 +163,15 @@ export default {
     }
   }
 }
+
+@media print {
+  #knowledge {
+    .heading {
+      em {
+        display: none;
+      }
+    }
+  }
+}
+
 </style>
