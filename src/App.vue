@@ -69,7 +69,11 @@
             </div>
             <div>
               <figure>
-                <img src="./assets/products-page.png" class="responsive" alt="Responsive product listing page built with React" />
+                <picture class="responsive">
+                  <source srcset="./assets/products-page.webp" type="image/webp">
+                  <source srcset="./assets/products-page.png" type="image/png"> 
+                  <img src="./assets/products-page.png" class="responsive" alt="Responsive product listing page built with React">
+                </picture>
                 <figcaption>Screenshot of the product listing page built with React</figcaption>
               </figure>
             </div>
@@ -138,7 +142,7 @@
             The source code for this page and a few other experiments can be found at:
           </p>
           <div class="contact-method">
-            <a href="https://github.com/noolan" target="_blank">https://github.com/noolan</a>
+            <a href="https://github.com/noolan" target="_blank" rel="noopener">https://github.com/noolan</a>
           </div>
         </div>
       </div>

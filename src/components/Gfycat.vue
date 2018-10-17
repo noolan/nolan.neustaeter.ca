@@ -65,22 +65,20 @@ export default {
   mounted: function () {
     let el = this.$refs.item
     this.$item = gfyObject(el, 'gfyitem')
-    try {
-      this.$item.init({
-        id: this.gfyId,
-        controls: this.controls,
-        title: this.title,
-        autoplay: this.autoplay,
-        responsive: this.responsive,
-        maxHeight: this.maxHeight,
-        optimize: false, // does not start playing with this enabled
-        gif: this.gif,
-        hd: this.hd,
-        playbackSpeed: this.playbackSpeed
-      })
-    } catch (e) {
-      // console.error(e)
-    }
+    this.$item.init({
+      id: this.gfyId,
+      controls: this.controls,
+      title: this.title,
+      autoplay: this.autoplay,
+      responsive: this.responsive,
+      maxHeight: this.maxHeight,
+      optimize: false, // does not start playing with this enabled
+      gif: this.gif,
+      hd: this.hd,
+      playbackSpeed: this.playbackSpeed
+    }).catch(error => {
+      // ruh-roh
+    })
   }
 }
 </script>
