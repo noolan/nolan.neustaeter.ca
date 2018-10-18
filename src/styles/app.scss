@@ -67,9 +67,49 @@ body {
   .responsive { max-width: 100%; }
 
   .sub-section + .sub-section {
-    margin-top: 1.5em;
+    margin-top: 2em;
     border-top: 1px solid $lighter;
-    padding-top: 1.5em;
+    padding-top: 3em;
+  }
+
+  .tree {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+    .branches {
+      display: flex;
+      padding-top: .25em;
+
+      .branch {
+        &::after {
+          display: inline-block;
+          content: " ";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 1px;
+          height: .75em;
+          border-left: 1px solid $lighter;
+        }
+      }
+    }
+    .branch {
+      position: relative;
+      &[title] {
+        &::before {
+          display: block;
+          content: attr(title);
+          padding-top: .9em;
+          padding-right: 1em;
+          padding-left: 1em;
+          // border-bottom: 1px solid $lighter;
+        }
+      }
+    }
+    .branch + .branch {
+      // padding-left: 2em;
+    }
   }
 
 
@@ -114,7 +154,7 @@ body {
 
   > section {
     width: 100%;
-    padding: 3em 0 4em;
+    padding: 4em 0 5em;
     text-align: center;
   }
 
@@ -160,6 +200,40 @@ body {
 
     input:focus::-webkit-input-placeholder {
       opacity: 0;
+    }
+  }
+
+  table {
+    margin-bottom: 2em;
+    tr {
+      line-height: 2em;
+    }
+    td, th {
+      padding: {
+        left: 1em;
+        right: 1em;
+      }
+    }
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: lighten($structure, 72.5%);
+        }
+      }
+    }
+  }
+
+  dl {
+    padding-bottom: 1.5em;
+    font-size: .85em;
+    dt, dd {
+      line-height: 1.2;
+    }
+    dd {
+      margin-bottom: 0;
+    }
+    dd + dt {
+      margin-top: .75em;
     }
   }
 

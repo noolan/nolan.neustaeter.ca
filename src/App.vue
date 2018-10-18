@@ -82,41 +82,110 @@
 
         <div id="secret" class="project sub-section">
           <p class="lead">
-            This last year I was tasked with building a completely new product for the company which has been awesome.
+            In 2016 I was tasked with building an online marketing platform with a website / page builder at it&rsquo;s core.
           </p>
           <p>
-            I can&rsquo;t go into much detail since the product hasn&rsquo;t been officially released but the technology stack I chose was:
+            Over the years I had built multiple <abbr title="Content Management System">CMS</abbr>&rsquo; for my own use and I had been tossing around some ideas in my head on how to structure the server and database since then.
+          </p>
+          <p>
+            For the server, I split the functionality into three domains (both figuratively and literally), each was a separate application that shared common business logic code and libraries where possible.<br>
+            The three applications could run on the same machine with the http server distributing requests based on subdomain or the applications could split off into their own machines/VMs/instances/containers if needed.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Application</th>
+                <th>Visibility</th>
+                <th>Subdomain</th>
+                <th>Responsibilities</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sites</td>
+                <td>Public</td>
+                <td class="text-right"><code>www.</code></td>
+                <td>In charge of displaying published websites, processing form submissions, and collecting analytics.</td>
+              </tr>
+              <tr>
+                <td>Control</td>
+                <td>Private</td>
+                <td class="text-right"><code>control.</code></td>
+                <td>Authenticates users and serves them the <abbr title="Single Page Application">SPA</abbr></td>
+              </tr>
+              <tr>
+                <td>API</td>
+                <td>Private</td>
+                <td class="text-right"><code>api.</code></td>
+                <td>Provides endpoints for the <abbr title="Single Page Application">SPA</abbr> to allow it to manage businesses, users, websites, pages, etc...</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Each application had it&rsquo;s own routes, controllers, and views but shared models, service providers, middleware, and config (through .env files).
           </p>
 
           <div class="columns items-centered">
             <div>
-              <dl style="font-size: .85em; padding-bottom: 1.5rem;">
+              <h5 class="pv-1">Here&rsquo;s a listing of the stack we settled on:</h5>
+              <dl>
                 <dt>Hosting</dt>
                 <dd>Amazon Web Services EC2 - fast and cost efficient</dd>
 
                 <dt>Web Server</dt>
-                <dd>Nginx - fast and very configurable</dd>
+                <dd>Nginx - fast and very flexible</dd>
 
                 <dt>Backend language</dt>
                 <dd>PHP7 - huge speed improvement over PHP5.x and the other devs are already familiar with PHP from our existing products</dd>
 
                 <dt>Backend framework</dt>
-                <dd>Laravel 5 - I&rsquo;ve been using Laravel since version 2 and I love it&rsquo;s attention to code readabillity and having an easy to use API</dd>
+                <dd>Laravel and Lumen - I&rsquo;ve been using Laravel since version 2 and I love it&rsquo;s focus on code readability and providing sane defaults that are easy to customize</dd>
 
                 <dt>Frontend framework</dt>
-                <dd>Vue.js - This was a tossup between Vue and React. The main deciding factor was that I would soon be bringing some junior devs on to the project and React has a steep learning curve at the beginning</dd>
+                <dd>Vue.js - This was a tossup between Vue and React. The main deciding factor was that I would soon be bringing some junior devs on to the project and Vue is much easier to learn</dd>
               </dl>
             </div>
 
             <div>
-              <gfycat gfy-id="GratefulNarrowBluetickcoonhound" caption="Teaser video of just one part of my previous project"></gfycat>
+              <gfycat gfy-id="GratefulNarrowBluetickcoonhound" caption="Teaser video of the page builder function of my previous project"></gfycat>
             </div>
           </div>
 
+          <div class="flex">
+            <p>
+              To the right is a diagram of part of the data structure I designed. Pages don't store their content directly, the revisions do.<br>
+              A new revision is created every time the page&rsquo;s content is updated.
+              <ul>
+                <li>If the revision is from an autosave while editing, it will contain a delta representing that change and it will be marked as a <code>draft</code> revision.</li>
+                <li>If the user is happy with their changes, they trigger a publish which creates a revision marked as <code>published</code> with the complete content.</li>
+              </ul>
+              When a page is requested through the Site application, the content from the latest published revision is used to build it.
+            </p>
+
+            <aside class="tree pl-2">
+              <div class="branch" title="Businesses">
+                <div class="branches">
+                  <div class="branch" title="Users"></div>
+                  <div class="branch" title="Websites">
+                    <div class="branches">
+                      <div class="branch" title="Pages">
+                        <div class="branches">
+                          <div class="branch" title="Revisions"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+
           <p>
-            This type of project is something that I have worked on a few times in the past so I already had some ideas that I wanted to try out in regards to how to configure the web server and the data structure.<br>
-            It&rsquo;s on the home stretch now so as I&rsquo;m able, I&rsquo;ll add more details about this new product <strong>here</strong>.
+            This structure has a few advantages; content changes can happen without affecting the live version of the page, changes can be reviewed and reverted, A/B testing can be easily implemented by having one revision marked as A and another as B.
           </p>
+
         </div>
 
       </div>
@@ -127,8 +196,11 @@
     <section id="contact">
       <div class="container">
         <div class="sub-section">
-          <p class="lead">
+          <p class="lead screen-only">
             If you want to chat about anything...
+          </p>
+          <p class="lead print-only">
+            References available upon request.
           </p>
           <div class="contact-method">
             send me an email at <a :href="emailHref" target="_blank">{{ email }}</a>
@@ -194,7 +266,7 @@ export default {
 
 // utilities
 @import "./styles/flexbox-toolbox.css";
-
+@import "./styles/utilities.scss";
 // main styles
 @import "./styles/app.scss";
 
